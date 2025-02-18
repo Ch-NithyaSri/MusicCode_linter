@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN" "http://checkstyle.sourceforge.net/dtds/configuration_1_3.dtd">
+<configuration>
+
+    <!-- Set the file encoding for all files -->
+    <property name="charset" value="UTF-8"/>
+
+    <!-- Set the format for the Checkstyle output -->
+    <module name="Checker">
+        <property name="severity" value="warning"/>
+
+        <!-- Checks for indentation -->
+        <module name="TreeWalker">
+            <module name="Indentation">
+                <property name="column" value="4"/>
+                <property name="tabWidth" value="4"/>
+                <property name="useTabCharacter" value="false"/>
+            </module>
+
+            <!-- Checks for naming conventions -->
+            <module name="NamingConvention">
+                <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+                <property name="message" value="Variable names should be in camelCase"/>
+            </module>
+
+            <!-- Checks for method names -->
+            <module name="MethodName">
+                <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+                <property name="message" value="Method names should be in camelCase"/>
+            </module>
+
+            <!-- Checks for class names -->
+            <module name="ClassName">
+                <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
+                <property name="message" value="Class names should start with an uppercase letter"/>
+            </module>
+
+            <!-- Checks for missing javadoc comments -->
+            <module name="JavadocMethod">
+                <property name="allowEmpty" value="true"/>
+                <property name="minLines" value="2"/>
+            </module>
+
+            <!-- Checks for empty block -->
+            <module name="EmptyBlock"/>
+
+            <!-- Checks for whitespace formatting -->
+            <module name="WhitespaceAfter">
+                <property name="allowLineBreaks" value="true"/>
+            </module>
+
+            <!-- Checks for the usage of curly braces for blocks -->
+            <module name="NeedBraces">
+                <property name="allowSingleLine" value="true"/>
+            </module>
+
+            <!-- Checks for right margin line length -->
+            <module name="FileLength">
+                <property name="max" value="1000"/>
+            </module>
+
+            <!-- Checks for unused imports -->
+            <module name="UnusedImports"/>
+
+            <!-- Checks for missing checkstyle comments -->
+            <module name="CommentFormat"/>
+
+        </module>
+    </module>
+
+</configuration>
